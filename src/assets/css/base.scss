@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Barlow;
+  font-display: swap;
+  src: url("./fonts/Barlow-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Barlow Medium";
+  font-display: swap;
+  src: url("./fonts//Barlow-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Barlow SemiBold";
+  font-display: swap;
+  src: url("./fonts//Barlow-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Barlow Bold";
+  font-display: swap;
+  src: url("./fonts//Barlow-Bold.ttf");
+}
+
+$base-pink: #e83b69;
+$dark-blue: #222937;
+$darker-blue: #0f1722;
+$light-gray: #a4a4a4;
+
+html,
+body {
+  font-family: Barlow;
+}
+
+@layer utilities {
+  .text-primary-pink {
+    color: $base-pink;
+  }
+
+  .bg-primary-pink {
+    background-color: $base-pink;
+  }
+
+  .bg-dark-blue-gradient {
+    background: linear-gradient(
+      358.67deg,
+      #131c29 100%,
+      rgba(29, 34, 44, 0) 104.48%
+    );
+  }
+
+  .bg-dark-blue {
+    background-color: $dark-blue;
+  }
+
+  .bg-darker-blue {
+    background-color: $darker-blue;
+  }
+}
+
+button {
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+a {
+  color: $light-gray;
+  &:hover {
+    filter: brightness(1.2);
+    text-decoration: underline;
+  }
+}

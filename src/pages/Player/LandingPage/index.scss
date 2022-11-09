@@ -1,0 +1,19 @@
+.landingPageImageDesktop {
+  @media screen and (min-width: 1279px) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(19, 28, 41, 0.5)),
+      url("../../../assets/img/landingPageBackground.png") no-repeat center
+        center/cover;
+  }
+}
+
+.landingPageImageMobile {
+  @media screen and (max-width: 1279px) {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(19, 28, 41, 0.7)),
+      url("../../../assets/img/landingPageBackground.png") no-repeat center
+        center/cover;
+  }
+}
+
+.backgroundPlayersLandingPage {
+  background: rgba(19, 28, 41, 0.5);
+}
