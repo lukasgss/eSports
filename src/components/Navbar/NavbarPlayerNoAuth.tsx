@@ -18,7 +18,7 @@ const NavbarPlayerNoAuth = ({
         <img className="w-12 h-12" src={websiteLogo} alt="Logo" />
       </Link>
       <div className="items-center gap-5 hidden lg:flex">
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/home">Home</NavLink>
         <NavLink to="/campeonatos">Campeonatos</NavLink>
         <NavLink to="/noticias">Notícias</NavLink>
         <NavLink to="/players">Players</NavLink>

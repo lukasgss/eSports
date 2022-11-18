@@ -5,14 +5,19 @@ interface ButtonProps {
   submit?: boolean;
   action?: (...params: (number | object | string)[]) => void;
   loading?: boolean;
+  color?: "transparent";
   children: React.ReactNode;
 }
 
-const Button = ({ submit, action, loading, children }: ButtonProps) => {
+const Button = ({ submit, action, color, loading, children }: ButtonProps) => {
   return (
     <div>
       <button
-        className="bg-primary-pink disabled:bg-gray-200 disabled:text-gray-800 disabled:cursor-not-allowed"
+        className={`${
+          color === "transparent"
+            ? "bg-transparent border hover:bg-white hover:text-black"
+            : "bg-primary-pink"
+        } disabled:bg-gray-200 disabled:text-gray-800 disabled:cursor-not-allowed`}
         type={submit ? "submit" : "button"}
         disabled={loading}
         onClick={action}

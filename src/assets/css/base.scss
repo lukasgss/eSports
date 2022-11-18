@@ -30,6 +30,9 @@ $base-pink: #e83b69;
 $dark-blue: #222937;
 $darker-blue: #0f1722;
 $light-gray: #a4a4a4;
+$primary-gray: #2c333e;
+$lighter-gray: #e8e8e8;
+$base-pink-gradient: linear-gradient(232.52deg, #9d1538 13.71%, #e83b68 95.33%);
 
 html,
 body {
@@ -39,6 +42,14 @@ body {
 @layer utilities {
   .text-primary-pink {
     color: $base-pink;
+  }
+
+  .text-light-gray {
+    color: $light-gray;
+  }
+
+  .text-lighter-gray {
+    color: $lighter-gray;
   }
 
   .bg-primary-pink {
@@ -53,6 +64,10 @@ body {
     );
   }
 
+  .bg-primary-pink-gradient {
+    background: $base-pink-gradient;
+  }
+
   .bg-dark-blue {
     background-color: $dark-blue;
   }
@@ -60,16 +75,20 @@ body {
   .bg-darker-blue {
     background-color: $darker-blue;
   }
+
+  .bg-primary-gray {
+    background-color: $primary-gray;
+  }
 }
 
 button {
   color: #fff;
   font-weight: 700;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 0.25rem;
   &:hover {
-    opacity: 0.9;
+    filter: brightness(1.2);
   }
 }
 

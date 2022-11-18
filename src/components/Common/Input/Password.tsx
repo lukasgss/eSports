@@ -32,7 +32,7 @@ const Password = ({
           {textoLabel}
         </label>
         <input
-          className={`bg-[#222937] rounded p-4 pr-10 text-[#E8E8E8] w-full ${
+          className={`bg-[#222937] rounded p-4 pr-10 text-lighter-gray w-full ${
             error ? "border-[2px] border-[#E83B69]" : ""
           }`}
           {...register(name)}
