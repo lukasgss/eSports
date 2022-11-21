@@ -34,7 +34,7 @@ const Dropdown = ({
             {({ open }) => (
               <div className="relative mt-1 z-50">
                 <Listbox.Button
-                  className="relative h-12 w-full cursor-default rounded-lg bg-primary-gray py-2 pl-3 pr-10 text-left 
+                  className="relative h-12 w-full rounded-lg bg-primary-gray py-2 pl-3 pr-10 text-left 
                 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white 
                 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 sm:text-sm"
                 >
@@ -63,7 +63,7 @@ const Dropdown = ({
                     {arrDados.map((dado) => (
                       <Listbox.Option
                         key={dado.value}
-                        className={`relative cursor-default select-none px-2 my-2 ${
+                        className={`relative cursor-pointer select-none px-2 my-2 ${
                           field.value.text === dado.text
                             ? "bg-darker-blue rounded-lg"
                             : ""

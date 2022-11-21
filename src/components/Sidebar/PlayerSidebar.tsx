@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MdOutlineMenuOpen, MdHome } from "react-icons/md";
 import { MdLogout } from "react-icons/md";
 import websiteLogo from "../../assets/img/websiteLogo.png";

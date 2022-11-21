@@ -5,48 +5,43 @@ import { FaTrophy } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { HiOutlineAtSymbol } from "react-icons/hi";
 import { MdHome } from "react-icons/md";
-import { Navigate, useNavigate } from "react-router-dom";
-
-interface OpcaoNavegacao {
-  text: string;
-  link: string;
-  icon: IconType;
-  active: boolean;
-}
+import { useLocation, useNavigate } from "react-router-dom";
 
 const OpcoesNavegacao = () => {
-  const [opcoesNavegacao, setOpcoesNavegacao] = useState<OpcaoNavegacao[]>([
+  const rotaAtual = useLocation().pathname;
+
+  const opcoesNavegacao = [
     {
       text: "Home",
       link: "/home",
       icon: MdHome,
-      active: true,
+      active: rotaAtual === "/home",
     },
     {
       text: "Inscrições",
       link: "/inscricoes",
       icon: RiPencilFill,
-      active: false,
+      active: rotaAtual === "/inscricoes",
     },
     {
       text: "Campeonatos",
       link: "/campeonatos",
       icon: FaTrophy,
-      active: false,
+      active: rotaAtual === "/campeonatos",
     },
     {
       text: "Comunicados",
       link: "/comunicados",
       icon: IoMdMail,
-      active: false,
+      active: rotaAtual === "/comunicados",
     },
     {
       text: "Contato",
       link: "/contato",
       icon: HiOutlineAtSymbol,
-      active: false,
+      active: rotaAtual === "/contato",
     },
-  ]);
+  ];
 
   const navigate = useNavigate();
 
@@ -57,12 +52,6 @@ const OpcoesNavegacao = () => {
           key={Opcao.text}
           onClick={() => {
             navigate(Opcao.link);
-            const opcoesNavegacaoAtualizadas = opcoesNavegacao.map((opcao) =>
-              opcao.text === Opcao.text
-                ? { ...Opcao, active: true }
-                : { ...opcao, active: false }
-            );
-            setOpcoesNavegacao(opcoesNavegacaoAtualizadas);
           }}
           className="h-10 text-left flex items-center gap-3.5 p-0 mb-4"
         >

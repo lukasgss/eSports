@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../../components/Common/Button";
 import { CardDivulgacao } from "./components/CardDivulgacao";
-import Modal from "../../../components/Common/Modal";
+import Modal from "../../../components/Common/Modais/ModalImagem";
 import FormCadastro from "../FormCadastro";
 import NavbarPlayerNoAuth from "../../../components/Navbar/NavbarPlayerNoAuth";
 import FormLogin from "../FormLogin";

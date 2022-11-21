@@ -6,10 +6,13 @@ import { Menu } from "@headlessui/react";
 
 import playerImg from "../../../../assets/img/playerImageProfile.png";
 
-export default function Example() {
+const DropdownPerfil = () => {
   return (
     <Menu>
-      <Menu.Button className="w-[80px] lg:w-[300px] mr-3 lg:mr-8 flex items-center gap-1 bg-darker-blue px-4 lg:px-6 py-55555 rounded-xl">
+      <Menu.Button
+        className="w-[80px] lg:w-[300px] mr-3 lg:mr-8 flex items-center gap-1 bg-darker-blue px-4
+       lg:px-6 py-55555 rounded-xl justify-center"
+      >
         <img
           src={playerImg}
           alt="foto de perfil player"
@@ -80,4 +83,6 @@ export default function Example() {
       </Menu.Items>
     </Menu>
   );
-}
+};
+
+export default DropdownPerfil;
