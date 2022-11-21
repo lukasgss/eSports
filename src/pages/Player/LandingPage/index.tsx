@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Button from "../../../components/Common/Button";
 import { CardDivulgacao } from "./components/CardDivulgacao";
 import Modal from "../../../components/Common/Modais/ModalImagem";
-import FormCadastro from "../FormCadastro";
+import FormCadastro from "./components/FormCadastro";
 import NavbarPlayerNoAuth from "../../../components/Navbar/NavbarPlayerNoAuth";
-import FormLogin from "../FormLogin";
+import FormLogin from "./components/FormLogin";
 
 import "./index.scss";
 

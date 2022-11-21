@@ -34,7 +34,7 @@ const Text = ({
       ) : null}
       <div className="relative">
         <input
-          className={`bg-[#222937] rounded p-4 text-lighter-gray ${
+          className={`w-full bg-[#222937] rounded p-4 text-lighter-gray ${
             error ? "border-[2px] border-[#E83B69]" : ""
           } ${Icon ? "pl-10" : ""}`}
           {...register(name)}

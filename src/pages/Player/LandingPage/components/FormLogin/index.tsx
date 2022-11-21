@@ -1,20 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import Button from "../../../components/Common/Button";
-import Password from "../../../components/Common/Input/Password";
-import Text from "../../../components/Common/Input/Text";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
-interface FormLoginFields {
-  email: string;
-  senha: string;
-}
-
-interface FormLoginProps {
-  setIsOpenModalCadastro: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { FormLoginProps, FormLoginFields } from "./types";
+import Text from "../../../../../components/Common/Input/Text";
+import Button from "../../../../../components/Common/Button";
+import Password from "../../../../../components/Common/Input/Password";
 
 const FormLogin = ({ setIsOpenModalCadastro }: FormLoginProps) => {
   const [loading, setLoading] = useState(false);
