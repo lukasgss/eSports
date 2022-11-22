@@ -1,27 +1,24 @@
 import React from "react";
-import { UseFormRegister, FieldError } from "react-hook-form";
-import { IconType } from "react-icons/lib";
+import { FieldError, UseFormRegister } from "react-hook-form";
 import FormErrorMessage from "../../FormErrorMessage";
 
-interface TextProps {
+interface TextareaProps {
   register: UseFormRegister<any>;
-  textoLabel?: string;
   name: string;
-  error?: FieldError;
   placeholder: string;
-  Icon?: IconType;
+  textoLabel: string;
   className?: string;
+  error?: FieldError;
 }
 
-const Text = ({
+const Textarea = ({
   register,
   textoLabel,
   name,
   error,
   placeholder,
-  Icon,
   className,
-}: TextProps) => {
+}: TextareaProps) => {
   return (
     <div className={`flex flex-col ${className}`}>
       {textoLabel ? (
@@ -32,22 +29,18 @@ const Text = ({
           {textoLabel}
         </label>
       ) : null}
-      <div className="relative">
-        <input
-          className={`text-[#ff85ca] w-full bg-[#222937] rounded p-4 text-lighter-gray ${
+      <div className="relative h-full">
+        <textarea
+          className={`w-full bg-[#222937] rounded p-4 text-lighter-gray resize-none ${
             error ? "border-[2px] border-[#E83B69]" : ""
-          } ${Icon ? "pl-10" : ""}`}
+          }`}
           {...register(name)}
-          type="text"
           placeholder={placeholder}
         />
-        {Icon ? (
-          <Icon className="w-6 h-6 absolute bottom-[30%] left-2" />
-        ) : null}
       </div>
       {error ? <FormErrorMessage error={error.message} /> : null}
     </div>
   );
 };
 
-export default Text;
+export default Textarea;

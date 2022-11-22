@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { IoIosArrowUp } from "react-icons/io";
-import { Controller } from "react-hook-form";
+import { Controller, Control } from "react-hook-form";
 
 export interface DadosDropdown {
   text: string;
@@ -11,7 +11,7 @@ export interface DadosDropdown {
 interface DropdownProps {
   name: string;
   placeholder: string;
-  control: any;
+  control: Control<any>;
   defaultValue?: number;
   arrDados: DadosDropdown[];
 }

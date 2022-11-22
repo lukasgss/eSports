@@ -21,7 +21,7 @@ const OpcoesNavegacao = () => {
       text: "Inscrições",
       link: "/inscricoes",
       icon: RiPencilFill,
-      active: rotaAtual === "/inscricoes",
+      active: rotaAtual.includes("inscricoes"),
     },
     {
       text: "Campeonatos",

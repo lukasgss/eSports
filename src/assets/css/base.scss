@@ -31,6 +31,9 @@ $dark-blue: #222937;
 $darker-blue: #0f1722;
 $light-gray: #a4a4a4;
 $primary-gray: #2c333e;
+$primary-blue: #131c29;
+$primary-red: #ff4848;
+$primary-green: #17b51c;
 $lighter-gray: #e8e8e8;
 $base-pink-gradient: linear-gradient(232.52deg, #9d1538 13.71%, #e83b68 95.33%);
 
@@ -56,6 +59,14 @@ body {
     background-color: $base-pink;
   }
 
+  .text-primary-red {
+    color: $primary-red;
+  }
+
+  .text-primary-green {
+    color: $primary-green;
+  }
+
   .bg-dark-blue-gradient {
     background: linear-gradient(
       358.67deg,
@@ -68,6 +79,10 @@ body {
     background: $base-pink-gradient;
   }
 
+  .bg-primary-red {
+    background-color: $primary-red;
+  }
+
   .bg-dark-blue {
     background-color: $dark-blue;
   }
@@ -76,8 +91,16 @@ body {
     background-color: $darker-blue;
   }
 
+  .bg-primary-blue {
+    background-color: $primary-blue;
+  }
+
   .bg-primary-gray {
     background-color: $primary-gray;
+  }
+
+  .border-primary-pink {
+    border-color: $base-pink;
   }
 }
 
