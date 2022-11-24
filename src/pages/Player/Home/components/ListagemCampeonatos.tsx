@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { IoIosArrowUp } from "react-icons/io";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import Dropdown, {
   DadosDropdown,
