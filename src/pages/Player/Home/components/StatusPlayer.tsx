@@ -19,8 +19,12 @@ const StatusPlayer = () => {
 
       <div className="text-center flex flex-col">
         <h2 className="uppercase text-3xl mb-2">Macaco louco</h2>
-        <a href="https://e-sporti.com.br" target="_blank">
-          https://e-sporti.com.br
+        <a
+          href="https://esports.com.br"
+          target="_blank"
+          rel="noreferrer, nofollow"
+        >
+          https://esports.com.br
         </a>
       </div>
 

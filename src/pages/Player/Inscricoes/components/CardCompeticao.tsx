@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import cardCampeonatoFreeFire from "../../../../assets/img/Jogos/freeFireCardJogo.png";
 import Button from "../../../../components/Common/Button";
 
-interface CardCompeticaoProps {
+interface ICardCompeticaoProps {
   nome: string;
   jogo: string;
   valor: number;
   numParticipantes: number;
+  emBreve?: boolean;
 }
 
 const CardCompeticao = ({
@@ -17,7 +18,8 @@ const CardCompeticao = ({
   jogo,
   valor,
   numParticipantes,
-}: CardCompeticaoProps) => {
+  emBreve,
+}: ICardCompeticaoProps) => {
   const navigate = useNavigate();
 
   return (
@@ -46,9 +48,15 @@ const CardCompeticao = ({
         </div>
       </div>
       <div className="h-[2px] bg-[#464646] w-full" />
-      <div className="px-4 leading-8">
-        <span className="block text-light-gray">Inscrições terminam em: </span>
-        <div className="flex items-center gap-1.5 text-primary-red">
+      <div className="px-4 leading-7">
+        <span className="block text-light-gray">
+          {emBreve ? "Início das inscrições" : "Término das inscrições"}
+        </span>
+        <div
+          className={`flex items-center gap-1.5 ${
+            emBreve ? "text-primary-green" : "text-primary-red"
+          }`}
+        >
           <AiOutlineClockCircle className="w-5 h-5" />
           <span>21H 32M 22S</span>
         </div>

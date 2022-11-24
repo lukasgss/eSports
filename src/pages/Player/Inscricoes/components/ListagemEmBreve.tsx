@@ -48,7 +48,7 @@ const ListagemEmBreve = () => {
         </div>
         <SetasCarrossel tamanhoCardPx={294} />
       </div>
-      <div className="mt-4 flex gap-8">
+      <div className="mt-4 flex gap-8 pb-5">
         {Array(5)
           .fill(0)
           .map(() => (
@@ -58,6 +58,7 @@ const ListagemEmBreve = () => {
               jogo="Free fire"
               valor={200}
               numParticipantes={5}
+              emBreve
             />
           ))}
       </div>

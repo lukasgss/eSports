@@ -1,6 +1,7 @@
 import React from "react";
 import { MdOutlineMenuOpen, MdHome } from "react-icons/md";
 import { MdLogout } from "react-icons/md";
+import { Link } from "react-router-dom";
 import websiteLogo from "../../assets/img/websiteLogo.png";
 import OpcoesNavegacao from "./components/OpcoesNavegacao";
 
@@ -10,10 +11,12 @@ const PlayerSidebar = () => {
       <div className="fixed h-full flex flex-col justify-between">
         <div>
           <div className="py-5 px-2.5 flex items-center gap-3">
-            <img src={websiteLogo} alt="logo website" />
-            <h3 className="text-white font-bold text-sm">
-              <span className="text-primary-pink">Empresa</span> Sport
-            </h3>
+            <Link to="/" className="flex items-center gap-3 hover:no-underline">
+              <img src={websiteLogo} alt="logo website" />
+              <h3 className="text-white font-bold text-sm">
+                <span className="text-primary-pink">Empresa</span> Sport
+              </h3>
+            </Link>
             <button
               type="button"
               className="w-fit p-2 bg-primary-gray text-light-gray"

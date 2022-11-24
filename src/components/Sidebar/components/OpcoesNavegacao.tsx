@@ -35,12 +35,6 @@ const OpcoesNavegacao = () => {
       icon: IoMdMail,
       active: rotaAtual === "/comunicados",
     },
-    {
-      text: "Contato",
-      link: "/contato",
-      icon: HiOutlineAtSymbol,
-      active: rotaAtual === "/contato",
-    },
   ];
 
   const navigate = useNavigate();
