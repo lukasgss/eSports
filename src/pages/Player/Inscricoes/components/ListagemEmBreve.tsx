@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import Dropdown from "../../../../components/Common/Input/Dropdown";
 import CardCompeticao from "./CardCompeticao";
 import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
 
 const ListagemEmBreve = () => {
+  const listagemEmBreveRef = useRef<HTMLDivElement | null>(null);
+
   const { control } = useForm();
 
   return (
@@ -46,10 +48,13 @@ const ListagemEmBreve = () => {
             ]}
           />
         </div>
-        <SetasCarrossel tamanhoCardPx={294} />
+        <SetasCarrossel tamanhoCardPx={294} ref={listagemEmBreveRef} />
       </div>
-      <div className="mt-4 flex gap-8 pb-5">
-        {Array(5)
+      <div
+        className="mt-4 flex gap-5 pb-5 overflow-x-scroll scrollbar-none scroll-smooth"
+        ref={listagemEmBreveRef}
+      >
+        {Array(7)
           .fill(0)
           .map(() => (
             <CardCompeticao

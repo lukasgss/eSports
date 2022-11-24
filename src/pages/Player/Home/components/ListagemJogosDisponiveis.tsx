@@ -1,13 +1,15 @@
-import React from "react";
-import { IoIosArrowUp } from "react-icons/io";
+import React, { useRef } from "react";
 import Dropdown from "../../../../components/Common/Input/Dropdown";
 import { useForm } from "react-hook-form";
 import CardJogo from "./CardJogo";
 
 import imgFreeFire from "../../../../assets/img/Jogos/leagueOfLegendsCardCampeonato.png";
 import imgFifa from "../../../../assets/img/Jogos/fifaCardCampeonato.png";
+import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
 
 const ListagemJogosDisponiveis = () => {
+  const listagemJogosRef = useRef<HTMLDivElement | null>(null);
+
   const { control } = useForm();
 
   return (
@@ -17,7 +19,10 @@ const ListagemJogosDisponiveis = () => {
     >
       <header className="flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col lg:flex-row items-center gap-5">
-          <h2 id="jogosDisponiveisHomePlayer" className="text-3xl font-bold">
+          <h2
+            id="jogosDisponiveisHomePlayer"
+            className="text-3xl font-bold whitespace-nowrap"
+          >
             Jogos disponíveis
           </h2>
           <Dropdown
@@ -41,22 +46,14 @@ const ListagemJogosDisponiveis = () => {
             ]}
           />
         </div>
-        <div className="flex justify-between items-center gap-2 mt-5 lg:mt-0">
-          <button type="button" className="bg-primary-gray p-3 w-12 h-12">
-            <span className="text-light-gray">
-              <IoIosArrowUp className="w-6 h-6 rotate-[270deg]" />
-            </span>
-          </button>
-          <button type="button" className="bg-primary-gray p-3 w-12 h-12">
-            <span className="text-light-gray">
-              <IoIosArrowUp className="w-6 h-6 rotate-90" />
-            </span>
-          </button>
-        </div>
+        <SetasCarrossel tamanhoCardPx={350} ref={listagemJogosRef} />
       </header>
-      <div className="mt-5 flex gap-5">
+      <div
+        className="mt-5 flex gap-5 overflow-x-scroll scrollbar-none scroll-smooth"
+        ref={listagemJogosRef}
+      >
         {new Array(5).fill(0).map((_elemento, idx) => (
-          <CardJogo key={idx} imgJogo={imgFreeFire} />
+          <CardJogo key={idx} imgJogo={idx % 2 === 0 ? imgFreeFire : imgFifa} />
         ))}
       </div>
     </section>

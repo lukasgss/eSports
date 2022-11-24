@@ -12,7 +12,7 @@ const Comunicados = () => {
   const [notificacaoClicada, setNotificacaoClicada] =
     useState<Notificacao | null>(null);
 
-  const notificacoes: Notificacao[] = [
+  const [notificacoes, setNotificacoes] = useState<Notificacao[]>([
     {
       id: 1,
       remetente: "Ruan12",
@@ -67,7 +67,7 @@ const Comunicados = () => {
       lido: false,
       data: "Qui, 17/03",
     },
-  ];
+  ]);
 
   const breadcrumbs = [
     {
@@ -102,6 +102,7 @@ const Comunicados = () => {
         <div className="flex gap-5 pr-3 sm:pr-8 pb-10">
           <CaixaDeEntrada
             notificacoes={notificacoes}
+            setNotificacoes={setNotificacoes}
             setNotificacaoClicada={setNotificacaoClicada}
             setModalMobileIsOpen={setModalMobileIsOpen}
           />

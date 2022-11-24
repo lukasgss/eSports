@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import { useForm } from "react-hook-form";
 import Dropdown, {
@@ -8,6 +8,7 @@ import CardCampeonato from "./CardCampeonato";
 
 import imgLeagueOfLegends from "../../../../assets/img/Jogos/leagueOfLegendsCardCampeonato.png";
 import imgDota2 from "../../../../assets/img/Jogos/dota2CardCampeonato.png";
+import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
 
 interface FormCampeonatosFields {
   terminoCampeonato: DadosDropdown;
@@ -15,6 +16,8 @@ interface FormCampeonatosFields {
 }
 
 const ListagemCampeonatos = () => {
+  const listagemCampeonatoRef = useRef<HTMLDivElement | null>(null);
+
   const campeonatosCadastrados = [
     {
       id: 1,
@@ -83,20 +86,12 @@ const ListagemCampeonatos = () => {
             ]}
           />
         </div>
-        <div className="flex justify-between gap-2 mt-5">
-          <button type="button" className="bg-primary-gray p-3 h-12 w-12">
-            <span className="text-light-gray">
-              <IoIosArrowUp className="w-6 h-6 rotate-[270deg]" />
-            </span>
-          </button>
-          <button type="button" className="bg-primary-gray p-3 h-12 w-12">
-            <span className="text-light-gray">
-              <IoIosArrowUp className="w-6 h-6 rotate-90" />
-            </span>
-          </button>
-        </div>
+        <SetasCarrossel tamanhoCardPx={350} ref={listagemCampeonatoRef} />
       </header>
-      <div className="flex gap-5 mt-5 flex-nowrap overflow-hidden">
+      <div
+        className="flex gap-5 mt-5 flex-nowrap overflow-x-scroll scroll-smooth scrollbar-none"
+        ref={listagemCampeonatoRef}
+      >
         {campeonatosCadastrados.map((campeonato, idx) => (
           <CardCampeonato
             key={campeonato.id}
