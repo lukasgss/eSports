@@ -1,9 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import Button from "../../../../components/Common/Button";
 import Dropdown from "../../../../components/Common/Input/Dropdown";
 import CardCompeticao from "./CardCompeticao";
+import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
 
 const ListagemEmBreve = () => {
   const { control } = useForm();
@@ -47,14 +46,7 @@ const ListagemEmBreve = () => {
             ]}
           />
         </div>
-        <div className="flex gap-2">
-          <Button color="gray">
-            <IoIosArrowBack className="w-6 h-6 text-light-gray" />
-          </Button>
-          <Button color="gray">
-            <IoIosArrowForward className="w-6 h-6 text-light-gray" />
-          </Button>
-        </div>
+        <SetasCarrossel tamanhoCardPx={294} />
       </div>
       <div className="mt-4 flex gap-8">
         {Array(5)

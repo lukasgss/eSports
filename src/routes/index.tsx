@@ -4,13 +4,13 @@ import Comunicados from "../pages/Player/Comunicados";
 import FaseInscricao from "../pages/Player/FaseInscricao";
 import HomePlayer from "../pages/Player/Home";
 import Inscricoes from "../pages/Player/Inscricoes";
-import LandingPage from "../pages/Player/LandingPage";
+import Portal from "../pages/Player/Portal";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<Portal />} />
         <Route path="/home" element={<HomePlayer />} />
         <Route path="/campeonatos" element={<Campeonatos />} />
         <Route path="/comunicados" element={<Comunicados />} />

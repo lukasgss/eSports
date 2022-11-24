@@ -2,5 +2,5 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {},
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp"), require("tailwind-scrollbar")],
 };
