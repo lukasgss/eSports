@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import { IconType } from "react-icons/lib";
+import React from "react";
 import { RiPencilFill } from "react-icons/ri";
 import { FaTrophy } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { HiOutlineAtSymbol } from "react-icons/hi";
 import { MdHome } from "react-icons/md";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const OpcoesNavegacao = () => {
+interface IOpcoesNavegacaoProps {
+  expanded: boolean;
+}
+
+const OpcoesNavegacao = ({ expanded }: IOpcoesNavegacaoProps) => {
   const rotaAtual = useLocation().pathname;
 
   const opcoesNavegacao = [
@@ -61,11 +63,11 @@ const OpcoesNavegacao = () => {
                     : "text-light-gray bg-primary-gray ml-[22px]"
                 } p-1.5 rounded-md`}
               >
-                <Opcao.icon className="w-7 h-7" />
+                <Opcao.icon title={Opcao.text} className="w-7 h-7" />
               </span>
             </>
           }
-          <span className="font-bold">{Opcao.text}</span>
+          {expanded ? <span className="font-bold">{Opcao.text}</span> : null}
         </button>
       ))}
     </div>
