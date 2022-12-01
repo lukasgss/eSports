@@ -7,6 +7,7 @@ interface ModalProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   titulo?: string;
   descricao?: string;
+  className?: string;
   backgroundColorClass?: string;
   children: ReactNode;
 }
@@ -16,6 +17,7 @@ const Modal = ({
   setIsOpen,
   titulo,
   descricao,
+  className = "",
   backgroundColorClass,
   children,
 }: ModalProps) => {
@@ -23,7 +25,7 @@ const Modal = ({
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-10 min-w-[350px] p-5"
+        className={`relative z-50 min-w-[350px] p-5 ${className}`}
         onClose={() => setIsOpen(false)}
       >
         <Transition.Child
@@ -49,12 +51,10 @@ const Modal = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform text-white overflow-hidden rounded-2xl text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform text-white rounded-2xl text-left align-middle shadow-xl transition-all">
                 <div
                   className={`relative pb-6 ${
-                    backgroundColorClass
-                      ? backgroundColorClass
-                      : "bg-dark-blue-gradient"
+                    backgroundColorClass || "bg-dark-blue-gradient"
                   }`}
                 >
                   <AiOutlineClose
@@ -79,9 +79,7 @@ const Modal = ({
                 </div>
                 <div
                   className={`${
-                    backgroundColorClass
-                      ? backgroundColorClass
-                      : "bg-dark-blue-gradient"
+                    backgroundColorClass || "bg-dark-blue-gradient"
                   }`}
                 >
                   {children}

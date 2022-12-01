@@ -26,7 +26,7 @@ const FormLogin = ({ setIsOpenModalCadastro }: FormLoginProps) => {
 
   const navigate = useNavigate();
 
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(() => {
     setLoading(true);
 
     setTimeout(() => {
@@ -53,7 +53,10 @@ const FormLogin = ({ setIsOpenModalCadastro }: FormLoginProps) => {
             placeholder="Digite aqui..."
             error={errors.senha}
           />
-          <button className="w-fit text-left pr-0 pt-0 pl-1 text-primary-pink font-normal">
+          <button
+            type="button"
+            className="w-fit text-left pr-0 pt-0 pl-1 text-primary-pink font-normal"
+          >
             Esqueceu a senha?
           </button>
         </div>
@@ -61,6 +64,7 @@ const FormLogin = ({ setIsOpenModalCadastro }: FormLoginProps) => {
           Entrar
         </Button>
         <button
+          type="button"
           onClick={() => setIsOpenModalCadastro(true)}
           className="mb-2 underline text-gray-200 font-normal"
         >

@@ -66,6 +66,7 @@ const FeedNoticias = () => {
                   href={dado.link}
                   target="_blank"
                   className="underline text-primary-pink"
+                  rel="noreferrer nofollow"
                 >
                   Saiba mais
                 </a>
@@ -76,9 +77,10 @@ const FeedNoticias = () => {
       </div>
       <div className="text-center mt-10 pb-4">
         <a
-          href="#"
+          href="/vejamais"
           target="_blank"
           className="text-primary-pink underline text-xl"
+          rel="noreferrer nofollow"
         >
           Veja mais
         </a>

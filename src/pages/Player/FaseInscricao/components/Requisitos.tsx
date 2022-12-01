@@ -10,12 +10,7 @@ interface RequisitosField {
 }
 
 const Requisitos = () => {
-  const {
-    register,
-    setValue,
-    watch,
-    formState: { errors },
-  } = useForm<RequisitosField>();
+  const { register, setValue, watch } = useForm<RequisitosField>();
 
   const comprovanteMatricula = watch("comprovanteMatricula");
 

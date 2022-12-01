@@ -25,6 +25,8 @@
   font-display: swap;
   src: url("./fonts//Barlow-Bold.ttf");
 }
+$radio-size: 22px;
+$radio-border: #d1d7e3;
 
 $base-pink: #e83b69;
 $dark-blue: #222937;
@@ -104,6 +106,21 @@ body {
   }
 }
 
+input {
+  background-color: $dark-blue;
+  padding: 1rem;
+  border-radius: 4px;
+  color: $lighter-gray;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(59, 71, 89, 1);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(59, 71, 89, 1);
+  box-shadow: 0px 0px 6px 1px rgba(59, 71, 89, 1);
+}
+
 button {
   color: #fff;
   font-weight: 700;
@@ -121,4 +138,10 @@ a {
     filter: brightness(1.2);
     text-decoration: underline;
   }
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }

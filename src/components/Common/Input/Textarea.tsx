@@ -8,7 +8,7 @@ interface TextareaProps {
   placeholder: string;
   textoLabel: string;
   className?: string;
-  error?: FieldError;
+  error: FieldError | undefined;
 }
 
 const Textarea = ({

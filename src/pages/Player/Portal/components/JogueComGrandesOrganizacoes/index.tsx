@@ -1,3 +1,4 @@
+import React from "react";
 import CardOrganizacao from "./CardOrganizacao";
 
 import loud from "../../../../../assets/img/EquipesESports/loud.png";
@@ -32,7 +33,7 @@ const JogueComGrandesOrganizacoes = () => {
             key={organizacao.link}
             href={organizacao.link}
             target="_blank"
-            rel="noreferrer, nofollow"
+            rel="noreferrer nofollow"
           >
             <CardOrganizacao
               key={organizacao.link}

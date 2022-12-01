@@ -71,6 +71,7 @@ const ListagemCampeonatos = () => {
               { text: "15 dias", value: 2 },
               { text: "1 mês ou mais", value: 3 },
             ]}
+            error={undefined}
           />
           <Dropdown
             name="jogos"
@@ -83,6 +84,7 @@ const ListagemCampeonatos = () => {
               { text: "LEAGUE OF LEGENDS", value: 4 },
               { text: "DOTA 2", value: 5 },
             ]}
+            error={undefined}
           />
         </div>
         <SetasCarrossel tamanhoCardPx={350} ref={listagemCampeonatoRef} />
@@ -91,7 +93,7 @@ const ListagemCampeonatos = () => {
         className="flex gap-5 mt-5 flex-nowrap overflow-x-scroll scroll-smooth scrollbar-none"
         ref={listagemCampeonatoRef}
       >
-        {campeonatosCadastrados.map((campeonato, idx) => (
+        {campeonatosCadastrados.map((campeonato) => (
           <CardCampeonato
             key={campeonato.id}
             organizador={campeonato.titulo}

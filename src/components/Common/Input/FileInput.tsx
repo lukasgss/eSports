@@ -30,6 +30,7 @@ const FileInput = ({
   textButton,
   files,
 }: FileInputProps) => {
+  // eslint-disable-next-line func-names
   const onDrop = function <T>(droppedFiles: T[]) {
     setValue(name, droppedFiles, { shouldValidate: true });
   };
@@ -44,19 +45,18 @@ const FileInput = ({
       <label className="block">{label}</label>
       <div className="flex flex-col md:flex-row items-start md:items-center lg:gap-5">
         <div
-          className={
-            "p-2 border-gray-900 bg-primary-gray" +
-            (isDragActive ? "bg-gray-400" : "bg-gray-200")
-          }
+          className={`p-2 border-gray-900 bg-primary-gray${
+            isDragActive ? "bg-gray-400" : "bg-gray-200"
+          }`}
           {...getRootProps()}
         >
           <Button>
             <input id={name} {...register(name)} {...getInputProps()} />
-            {textButton ? textButton : "Faça upload"}
+            {textButton || "Faça upload"}
           </Button>
         </div>
 
-        {!!files?.length ? (
+        {files?.length ? (
           <div className="flex gap-5 mt-2">
             {files.map((file) => {
               return (
@@ -67,11 +67,11 @@ const FileInput = ({
             })}
           </div>
         ) : (
-          <>
+          <div>
             {showNoFileText ? (
               <span className="text-[#bbb]">Nenhum arquivo selecionado</span>
             ) : null}
-          </>
+          </div>
         )}
       </div>
     </div>

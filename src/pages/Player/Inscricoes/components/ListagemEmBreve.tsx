@@ -25,6 +25,7 @@ const ListagemEmBreve = () => {
               { text: "15 dias", value: 2 },
               { text: "1 mês ou mais", value: 3 },
             ]}
+            error={undefined}
           />
           <Dropdown
             name="jogos"
@@ -35,6 +36,7 @@ const ListagemEmBreve = () => {
               { text: "Free Fire", value: 2 },
               { text: "League of Legends", value: 3 },
             ]}
+            error={undefined}
           />
           <Dropdown
             name="participantes"
@@ -46,6 +48,7 @@ const ListagemEmBreve = () => {
               { text: "26 - 50", value: 3 },
               { text: "mais de 50", value: 4 },
             ]}
+            error={undefined}
           />
         </div>
         <SetasCarrossel tamanhoCardPx={294} ref={listagemEmBreveRef} />

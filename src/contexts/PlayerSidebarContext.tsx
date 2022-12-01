@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useCallback, useMemo, useState } from "react";
 
 interface IPlayerSidebarContextProps {
   children: React.ReactNode;
@@ -13,7 +13,8 @@ export const PlayerNavbarContext = createContext<IPlayerSidebarContext>({
   sidebarStatus:
     JSON.parse(localStorage.getItem("playerSidebar") as string)?.expanded ??
     true,
-  updateSidebarStatus: function () {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  updateSidebarStatus() {},
 });
 
 const PlayerSidebarContext = ({ children }: IPlayerSidebarContextProps) => {
@@ -22,15 +23,21 @@ const PlayerSidebarContext = ({ children }: IPlayerSidebarContextProps) => {
       true
   );
 
-  const updateSidebarStatus = (status: boolean) => {
+  const updateSidebarStatus = useCallback((status: boolean) => {
     setSidebarStatus(status);
     localStorage.setItem("playerSidebar", JSON.stringify({ expanded: status }));
-  };
+  }, []);
+
+  const contextValue = useMemo(
+    () => ({
+      sidebarStatus,
+      updateSidebarStatus,
+    }),
+    [sidebarStatus, updateSidebarStatus]
+  );
 
   return (
-    <PlayerNavbarContext.Provider
-      value={{ sidebarStatus, updateSidebarStatus }}
-    >
+    <PlayerNavbarContext.Provider value={contextValue}>
       {children}
     </PlayerNavbarContext.Provider>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineClockCircle } from "react-icons/ai";
 
@@ -6,9 +6,13 @@ import Button from "../../../../components/Common/Button";
 
 interface CardJogoProps {
   imgJogo: string;
+  setIsModalPropostaHorarioOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const CardJogo = ({ imgJogo }: CardJogoProps) => {
+const CardJogo = ({
+  imgJogo,
+  setIsModalPropostaHorarioOpen,
+}: CardJogoProps) => {
   return (
     <div className="rounded-lg bg-primary-gray flex-none w-[350px]">
       <img
@@ -29,7 +33,7 @@ const CardJogo = ({ imgJogo }: CardJogoProps) => {
         <span className="text-light-gray">RODADA</span>
         <div className="flex justify-between">
           <span className="text-white">Mata-mata 1</span>
-          <Link to="#" className="text-primary-pink underline">
+          <Link to="/saibamais" className="text-primary-pink underline">
             Saiba mais
           </Link>
         </div>
@@ -46,7 +50,9 @@ const CardJogo = ({ imgJogo }: CardJogoProps) => {
           <span className="text-[#ff4848]">21H 32M 22S</span>
         </div>
         <div className="pb-4">
-          <Button>Mandar mensagem</Button>
+          <Button action={() => setIsModalPropostaHorarioOpen(true)}>
+            Mandar mensagem
+          </Button>
         </div>
       </div>
     </div>

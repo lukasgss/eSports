@@ -1,7 +1,6 @@
 import React from "react";
-import { MdExpandMore } from "react-icons/md";
+import { MdExpandMore, MdLanguage } from "react-icons/md";
 import { HiUsers, HiUser } from "react-icons/hi";
-import { MdLanguage } from "react-icons/md";
 import { Menu } from "@headlessui/react";
 
 import playerImg from "../../../../assets/img/playerImageProfile.png";

@@ -45,28 +45,26 @@ const OpcoesNavegacao = ({ expanded }: IOpcoesNavegacaoProps) => {
     <div className="text-lighter-gray">
       {opcoesNavegacao.map((Opcao) => (
         <button
+          type="button"
           key={Opcao.text}
           onClick={() => {
             navigate(Opcao.link);
           }}
           className="h-10 text-left flex items-center gap-3.5 p-0 mb-4"
         >
-          {
-            <>
-              {Opcao.active ? (
-                <span className="bg-primary-pink-gradient w-2 h-full" />
-              ) : null}
-              <span
-                className={`${
-                  Opcao.active
-                    ? "bg-primary-pink-gradient text-white"
-                    : "text-light-gray bg-primary-gray ml-[22px]"
-                } p-1.5 rounded-md`}
-              >
-                <Opcao.icon title={Opcao.text} className="w-7 h-7" />
-              </span>
-            </>
-          }
+          {Opcao.active ? (
+            <span className="bg-primary-pink-gradient w-2 h-full" />
+          ) : null}
+          <span
+            className={`${
+              Opcao.active
+                ? "bg-primary-pink-gradient text-white"
+                : "text-light-gray bg-primary-gray ml-[22px]"
+            } p-1.5 rounded-md`}
+          >
+            {/* eslint-disable-next-line react/jsx-pascal-case */}
+            <Opcao.icon title={Opcao.text} className="w-7 h-7" />
+          </span>
           {expanded ? <span className="font-bold">{Opcao.text}</span> : null}
         </button>
       ))}

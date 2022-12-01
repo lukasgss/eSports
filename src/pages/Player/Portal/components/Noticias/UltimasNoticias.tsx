@@ -14,8 +14,10 @@ const UltimasNoticias = () => {
       <div className="mt-5 px-5 grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
         {Array(4)
           .fill(0)
-          .map(() => (
+          .map((_el, idx) => (
             <CardNoticia
+              // eslint-disable-next-line react/no-array-index-key
+              key={idx}
               titulo="Como se torna o melhor jogador?"
               descricao="A live vai ser BRABA, com final do campeonato, shows, Goldizin na faixa e muito mais.."
               data="21 de Fevereiro, 2023"

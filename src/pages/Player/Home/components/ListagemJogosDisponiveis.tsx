@@ -1,13 +1,19 @@
-import React, { useRef } from "react";
-import Dropdown from "../../../../components/Common/Input/Dropdown";
+import React, { Dispatch, SetStateAction, useRef } from "react";
 import { useForm } from "react-hook-form";
+import Dropdown from "../../../../components/Common/Input/Dropdown";
 import CardJogo from "./CardJogo";
 
 import imgFreeFire from "../../../../assets/img/Jogos/leagueOfLegendsCardCampeonato.png";
 import imgFifa from "../../../../assets/img/Jogos/fifaCardCampeonato.png";
 import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
 
-const ListagemJogosDisponiveis = () => {
+interface IListagemJogosDisponiveisProps {
+  setIsModalPropostaHorarioOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const ListagemJogosDisponiveis = ({
+  setIsModalPropostaHorarioOpen,
+}: IListagemJogosDisponiveisProps) => {
   const listagemJogosRef = useRef<HTMLDivElement | null>(null);
 
   const { control } = useForm();
@@ -34,6 +40,7 @@ const ListagemJogosDisponiveis = () => {
               { text: "15 dias", value: 2 },
               { text: "1 mês ou mais", value: 3 },
             ]}
+            error={undefined}
           />
           <Dropdown
             name="categoria"
@@ -44,6 +51,7 @@ const ListagemJogosDisponiveis = () => {
               { text: "Mensagem", value: 2 },
               { text: "Partida marcada", value: 3 },
             ]}
+            error={undefined}
           />
         </div>
         <SetasCarrossel tamanhoCardPx={350} ref={listagemJogosRef} />
@@ -53,7 +61,12 @@ const ListagemJogosDisponiveis = () => {
         ref={listagemJogosRef}
       >
         {new Array(5).fill(0).map((_elemento, idx) => (
-          <CardJogo key={idx} imgJogo={idx % 2 === 0 ? imgFreeFire : imgFifa} />
+          <CardJogo
+            // eslint-disable-next-line react/no-array-index-key
+            key={idx}
+            imgJogo={idx % 2 === 0 ? imgFreeFire : imgFifa}
+            setIsModalPropostaHorarioOpen={setIsModalPropostaHorarioOpen}
+          />
         ))}
       </div>
     </section>

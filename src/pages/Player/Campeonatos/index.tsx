@@ -1,11 +1,11 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { AiOutlineSearch } from "react-icons/ai";
 import Breadcrumb from "../../../components/Breadcrumb";
 import PlayerSidebar from "../../../components/Sidebar/PlayerSidebar";
 import DropdownPerfil from "../Home/components/DropdownPerfil";
 import Notificacoes from "../Home/components/Notificacoes";
 import Text from "../../../components/Common/Input/Text";
-import { useForm } from "react-hook-form";
-import { AiOutlineSearch } from "react-icons/ai";
 import Dropdown from "../../../components/Common/Input/Dropdown";
 
 import cardCampeonatoLeagueOfLegends from "../../../assets/img/cardCampeonatoLeagueOfLegends.png";
@@ -141,6 +141,7 @@ const Campeonatos = () => {
               name="anoCampeonato"
               placeholder="Ano"
               arrDados={arrDados}
+              error={undefined}
             />
           </div>
         </div>

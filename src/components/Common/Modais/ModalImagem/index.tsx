@@ -20,7 +20,7 @@ const Modal = ({
   children,
 }: ModalProps) => {
   return (
-    <Transition appear show={isOpen ? true : false} as={Fragment}>
+    <Transition appear show={!!isOpen} as={Fragment}>
       <Dialog
         as="div"
         className="relative z-10 min-w-[350px] p-5"

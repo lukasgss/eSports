@@ -18,7 +18,7 @@ const CardCompeticao = ({
   jogo,
   valor,
   numParticipantes,
-  emBreve,
+  emBreve = false,
 }: ICardCompeticaoProps) => {
   const navigate = useNavigate();
 

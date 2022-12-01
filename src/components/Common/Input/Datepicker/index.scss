@@ -1,0 +1,39 @@
+@use "../../../../assets/css/base" as base;
+
+// .react-datepicker__month-container {
+.react-datepicker,
+.react-datepicker__header {
+  background-color: base.$primary-gray !important;
+  // border-color: base.$light-gray !important;
+  border-color: #252c37 !important;
+  font-size: 0.9rem;
+}
+
+.react-datepicker__day {
+  color: base.$lighter-gray !important;
+  font-family: "Barlow Medium";
+  color: rgb(214, 212, 212) !important;
+  &:hover {
+    background-color: base.$dark-blue !important;
+  }
+}
+
+.react-datepicker__day--selected {
+  background-color: base.$base-pink !important;
+  &:hover {
+    background-color: base.$darker-blue !important;
+  }
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: base.$dark-blue !important;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__current-month {
+  color: #fff !important;
+}
+
+.react-datepicker__triangle::after {
+  border-top-color: base.$primary-gray !important;
+}

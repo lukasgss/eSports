@@ -25,8 +25,10 @@ const MensagemContato = ({
   const dimensaoJanela = useWindowDimensions();
 
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {assunto && data && remetente && mensagem ? (
+        // eslint-disable-next-line react/jsx-no-useless-fragment
         <>
           {dimensaoJanela >= 768 ? (
             <div className="bg-primary-gray p-7 rounded-b-md">

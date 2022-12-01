@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
-import { MdOutlineMenuOpen } from "react-icons/md";
-import { MdLogout } from "react-icons/md";
+import { MdOutlineMenuOpen, MdLogout } from "react-icons/md";
 import { Link } from "react-router-dom";
 import websiteLogo from "../../assets/img/websiteLogo.png";
 import { PlayerNavbarContext } from "../../contexts/PlayerSidebarContext";
 import OpcoesNavegacao from "./components/OpcoesNavegacao";
 
 const PlayerSidebar = () => {
-  const { sidebarStatus: expanded, updateSidebarStatus: updateSidebarStatus } =
+  const { sidebarStatus: expanded, updateSidebarStatus } =
     useContext(PlayerNavbarContext);
 
   return (

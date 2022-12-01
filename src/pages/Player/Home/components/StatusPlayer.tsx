@@ -1,7 +1,7 @@
 import React from "react";
 
 import playerImageStatus from "../../../../assets/img/playerImageStatus.png";
-import "./../index.scss";
+import "../index.scss";
 
 const StatusPlayer = () => {
   return (
@@ -22,7 +22,7 @@ const StatusPlayer = () => {
         <a
           href="https://esports.com.br"
           target="_blank"
-          rel="noreferrer, nofollow"
+          rel="noreferrer nofollow"
         >
           https://esports.com.br
         </a>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,7 +7,6 @@ import Text from "../../../../../components/Common/Input/Text";
 import Password from "../../../../../components/Common/Input/Password";
 import Button from "../../../../../components/Common/Button";
 import LoginSocial from "./components/LoginSocial";
-import { useNavigate } from "react-router-dom";
 
 interface FormCadastroPlayerData {
   nomeCompleto: string;
@@ -37,7 +37,7 @@ const FormCadastro = ({ setIsOpenModalCadastro }: FormCadastroProps) => {
 
   const navigate = useNavigate();
 
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(() => {
     setLoading(true);
 
     setTimeout(() => {

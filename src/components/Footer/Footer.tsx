@@ -17,7 +17,7 @@ const Footer = () => {
           <a
             href="https://www.termsofusegenerator.net/"
             target="_blank"
-            rel="noreferrer, nofollow"
+            rel="nofollow noreferrer"
           >
             Termos de uso e Políticas de privacidade
           </a>
@@ -28,21 +28,21 @@ const Footer = () => {
           <a
             href="https://instagram.com"
             target="_blank"
-            rel="noreferrer, nofollow"
+            rel="nofollow noreferrer"
           >
             <AiOutlineInstagram className="h-5 w-5" />
           </a>
           <a
             href="https://eSports.com"
             target="_blank"
-            rel="noreferrer, nofollow"
+            rel="nofollow noreferrer"
           >
             <MdLanguage className="w-5 h-5" />
           </a>
           <a
             href="https://whatsapp.com"
             target="_blank"
-            rel="noreferrer, nofollow"
+            rel="nofollow noreferrer"
           >
             <FaWhatsapp className="w-5 h-5" />
           </a>
