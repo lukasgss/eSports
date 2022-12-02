@@ -1,54 +1,35 @@
 import React, { useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import Dropdown, {
   DadosDropdown,
 } from "../../../../components/Common/Input/Dropdown";
 import CardCampeonato from "./CardCampeonato";
-
-import imgLeagueOfLegends from "../../../../assets/img/Jogos/leagueOfLegendsCardCampeonato.png";
-import imgDota2 from "../../../../assets/img/Jogos/dota2CardCampeonato.png";
 import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
+import { obterListagemCampeonatosCadastrados } from "../../../../services/Api";
 
 interface FormCampeonatosFields {
   terminoCampeonato: DadosDropdown;
   jogos: DadosDropdown;
 }
 
+interface CampeonatoCadastrado {
+  id: number;
+  titulo: string;
+  jogo: string;
+  imagem: string;
+}
+
 const ListagemCampeonatos = () => {
   const listagemCampeonatoRef = useRef<HTMLDivElement | null>(null);
 
-  const campeonatosCadastrados = [
-    {
-      id: 1,
-      titulo: "Jester game cup1",
-      jogo: "League of Legends",
-      imagem: imgLeagueOfLegends,
-    },
-    {
-      id: 2,
-      titulo: "Lendas do Dota2",
-      jogo: "Dota 2",
-      imagem: imgDota2,
-    },
-    {
-      id: 3,
-      titulo: "Jester game cup3",
-      jogo: "League of Legends",
-      imagem: imgLeagueOfLegends,
-    },
-    {
-      id: 4,
-      titulo: "Lendas do Dota4",
-      jogo: "Dota 2",
-      imagem: imgDota2,
-    },
-    {
-      id: 5,
-      titulo: "Lendas do Dota5",
-      jogo: "Dota 2",
-      imagem: imgDota2,
-    },
-  ];
+  const { data: campeonatosCadastrados } = useQuery(
+    ["campeonatosCadastrados"],
+    async (): Promise<CampeonatoCadastrado[]> => {
+      const { data } = await obterListagemCampeonatosCadastrados();
+      return data;
+    }
+  );
 
   const { control } = useForm<FormCampeonatosFields>();
 
@@ -93,14 +74,15 @@ const ListagemCampeonatos = () => {
         className="flex gap-5 mt-5 flex-nowrap overflow-x-scroll scroll-smooth scrollbar-none"
         ref={listagemCampeonatoRef}
       >
-        {campeonatosCadastrados.map((campeonato) => (
-          <CardCampeonato
-            key={campeonato.id}
-            organizador={campeonato.titulo}
-            jogo={campeonato.jogo}
-            imagem={campeonato.imagem}
-          />
-        ))}
+        {campeonatosCadastrados?.length &&
+          campeonatosCadastrados.map((campeonato) => (
+            <CardCampeonato
+              key={campeonato.id}
+              organizador={campeonato.titulo}
+              jogo={campeonato.jogo}
+              imagem={campeonato.imagem}
+            />
+          ))}
       </div>
     </section>
   );

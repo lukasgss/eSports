@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "imagem": "/src/assets/img/Jogos/leagueOfLegendsCardCampeonato.png",
+    "jogo": "Free fire",
+    "adversario": "Guizada0511",
+    "rodada": "Mata-mata"
+  },
+  {
+    "id": 2,
+    "imagem": "/src/assets/img/Jogos/fifaCardCampeonato.png",
+    "jogo": "FIFA 23",
+    "adversario": "Viktor198",
+    "rodada": "Mata-mata"
+  },
+  {
+    "id": 3,
+    "imagem": "/src/assets/img/Jogos/leagueOfLegendsCardCampeonato.png",
+    "jogo": "Free fire",
+    "adversario": "rafaDani_",
+    "rodada": "Mata-mata"
+  },
+  {
+    "id": 4,
+    "imagem": "/src/assets/img/Jogos/fifaCardCampeonato.png",
+    "jogo": "FIFA 23",
+    "adversario": "alphonsodavies11",
+    "rodada": "Mata-mata"
+  },
+  {
+    "id": 5,
+    "imagem": "/src/assets/img/Jogos/leagueOfLegendsCardCampeonato.png",
+    "jogo": "League of Legends",
+    "adversario": "roberto_2013",
+    "rodada": "Mata-mata"
+  }
+]

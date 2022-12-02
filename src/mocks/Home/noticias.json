@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "image": "/src/assets/img/feedNoticiasImage.png",
+    "title": "League of Legends",
+    "description": "A live vai ser BRABA, com final do campeonato, shows, Goldizin na faixa e muito mais...",
+    "data": "09 de Dezembro, 2022",
+    "link": "https://google.com"
+  },
+  {
+    "id": 2,
+    "image": "/src/assets/img/feedNoticiasImage.png",
+    "title": "FIFA 23",
+    "description": "Essa live vai ser loucura! Ensinando desde jogadas ensaiadas até técnicas de finalização, cola aí pra aprender!",
+    "data": "16 de Dezembro, 2022",
+    "link": "https://google.com"
+  },
+  {
+    "id": 3,
+    "image": "/src/assets/img/feedNoticiasImage.png",
+    "title": "Free fire",
+    "description": "Cola na live ai rapaziada! Live rushando tentando pegar o máximo de kills",
+    "data": "04 de Dezembro, 2022",
+    "link": "https://google.com"
+  }
+]

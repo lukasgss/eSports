@@ -1,14 +1,21 @@
 import React, { Dispatch, SetStateAction, useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import Dropdown from "../../../../components/Common/Input/Dropdown";
 import CardJogo from "./CardJogo";
-
-import imgFreeFire from "../../../../assets/img/Jogos/leagueOfLegendsCardCampeonato.png";
-import imgFifa from "../../../../assets/img/Jogos/fifaCardCampeonato.png";
 import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
+import { obterListagemJogosDisponiveis } from "../../../../services/Api";
 
 interface IListagemJogosDisponiveisProps {
   setIsModalPropostaHorarioOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+interface JogoDisponivel {
+  id: number;
+  imagem: string;
+  jogo: string;
+  adversario: string;
+  rodada: string;
 }
 
 const ListagemJogosDisponiveis = ({
@@ -17,6 +24,14 @@ const ListagemJogosDisponiveis = ({
   const listagemJogosRef = useRef<HTMLDivElement | null>(null);
 
   const { control } = useForm();
+
+  const { data: jogosDisponiveis } = useQuery(
+    ["jogosDisponiveis"],
+    async (): Promise<JogoDisponivel[]> => {
+      const { data } = await obterListagemJogosDisponiveis();
+      return data;
+    }
+  );
 
   return (
     <section
@@ -60,14 +75,17 @@ const ListagemJogosDisponiveis = ({
         className="mt-5 flex gap-5 overflow-x-scroll scrollbar-none scroll-smooth"
         ref={listagemJogosRef}
       >
-        {new Array(5).fill(0).map((_elemento, idx) => (
-          <CardJogo
-            // eslint-disable-next-line react/no-array-index-key
-            key={idx}
-            imgJogo={idx % 2 === 0 ? imgFreeFire : imgFifa}
-            setIsModalPropostaHorarioOpen={setIsModalPropostaHorarioOpen}
-          />
-        ))}
+        {jogosDisponiveis?.length &&
+          jogosDisponiveis.map((jogo) => (
+            <CardJogo
+              key={jogo.id}
+              jogo={jogo.jogo}
+              adversario={jogo.adversario}
+              rodada={jogo.rodada}
+              imgJogo={jogo.imagem}
+              setIsModalPropostaHorarioOpen={setIsModalPropostaHorarioOpen}
+            />
+          ))}
       </div>
     </section>
   );

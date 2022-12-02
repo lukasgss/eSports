@@ -5,12 +5,18 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import Button from "../../../../components/Common/Button";
 
 interface CardJogoProps {
+  jogo: string;
   imgJogo: string;
+  adversario: string;
+  rodada: string;
   setIsModalPropostaHorarioOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const CardJogo = ({
+  jogo,
   imgJogo,
+  adversario,
+  rodada,
   setIsModalPropostaHorarioOpen,
 }: CardJogoProps) => {
   return (
@@ -20,19 +26,19 @@ const CardJogo = ({
         className="w-full h-[180px] rounded-t"
         alt="Imagem jogo"
       />
-      <span className="inline-block uppercase py-3 px-5">Free fire</span>
+      <span className="inline-block uppercase py-3 px-5">{jogo}</span>
 
       <div className="h-[2px] w-full bg-[#464646]" />
 
       <div className="py-3 px-5 flex flex-col">
         <div className="mb-2 flex flex-col">
           <span className="text-light-gray">NICK</span>
-          <span className="text-white">Guizada0511</span>
+          <span className="text-white">{adversario}</span>
         </div>
 
         <span className="text-light-gray">RODADA</span>
         <div className="flex justify-between">
-          <span className="text-white">Mata-mata 1</span>
+          <span className="text-white">{rodada}</span>
           <Link to="/saibamais" className="text-primary-pink underline">
             Saiba mais
           </Link>

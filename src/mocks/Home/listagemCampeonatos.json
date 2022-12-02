@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "titulo": "Jester game cup1",
+    "jogo": "League of Legends",
+    "imagem": "/src/assets/img/Jogos/leagueOfLegendsCardCampeonato.png"
+  },
+  {
+    "id": 2,
+    "titulo": "Lendas do Dota2",
+    "jogo": "Dota 2",
+    "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png"
+  },
+  {
+    "id": 3,
+    "titulo": "Jester game cup3",
+    "jogo": "League of Legends",
+    "imagem": "/src/assets/img/Jogos/leagueOfLegendsCardCampeonato.png"
+  },
+  {
+    "id": 4,
+    "titulo": "Lendas do Dota4",
+    "jogo": "Dota 2",
+    "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png"
+  },
+  {
+    "id": 5,
+    "titulo": "Lendas do Dota5",
+    "jogo": "Dota 2",
+    "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png"
+  }
+]
