@@ -31,3 +31,9 @@ export const obterCompeticoesInscricao = () => {
 export const obterCompeticoesEmBreve = () => {
   return API.get("/Inscricoes/competicoesEmBreve.json");
 };
+
+// Campeonatos
+
+export const obterListaCampeonatos = () => {
+  return API.get("/Campeonatos/listagemTodosCampeonatos.json");
+};

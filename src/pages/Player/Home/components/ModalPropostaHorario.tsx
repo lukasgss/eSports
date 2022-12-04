@@ -11,7 +11,7 @@ import Dropdown, {
 import Textarea from "../../../../components/Common/Input/Textarea";
 import Button from "../../../../components/Common/Button";
 
-interface IModalPropostaHorarioProps {
+interface ModalPropostaHorarioProps {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
@@ -26,7 +26,7 @@ interface FormPropostaHorarioFields {
 const ModalPropostaHorario = ({
   isOpen,
   setIsOpen,
-}: IModalPropostaHorarioProps) => {
+}: ModalPropostaHorarioProps) => {
   const schema = yup.object().shape({
     destinatario: yup.string().required("Obrigatório").email("E-mail inválido"),
     dataPartida: yup.string().required("Obrigatório"),

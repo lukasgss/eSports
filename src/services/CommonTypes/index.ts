@@ -15,3 +15,10 @@ export interface CompeticaoInscricao {
   valor: string;
   participantes: number;
 }
+
+export interface Campeonato {
+  id: number;
+  titulo: string;
+  jogo: string;
+  imagem: string;
+}

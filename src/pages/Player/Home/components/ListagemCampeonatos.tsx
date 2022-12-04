@@ -7,17 +7,11 @@ import Dropdown, {
 import CardCampeonato from "./CardCampeonato";
 import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
 import { obterListagemCampeonatosCadastrados } from "../../../../services/Api";
+import { Campeonato } from "../../../../services/CommonTypes";
 
 interface FormCampeonatosFields {
   terminoCampeonato: DadosDropdown;
   jogos: DadosDropdown;
-}
-
-interface CampeonatoCadastrado {
-  id: number;
-  titulo: string;
-  jogo: string;
-  imagem: string;
 }
 
 const ListagemCampeonatos = () => {
@@ -25,7 +19,7 @@ const ListagemCampeonatos = () => {
 
   const { data: campeonatosCadastrados } = useQuery(
     ["campeonatosCadastrados"],
-    async (): Promise<CampeonatoCadastrado[]> => {
+    async (): Promise<Campeonato[]> => {
       const { data } = await obterListagemCampeonatosCadastrados();
       return data;
     }
