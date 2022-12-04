@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nome": "Free Fire World Cup",
+    "jogo": "Free Fire",
+    "valor": "R$ 490,00",
+    "participantes": 5
+  },
+  {
+    "id": 2,
+    "nome": "Twitch Cup",
+    "jogo": "Free Fire",
+    "valor": "R$ 200,00",
+    "participantes": 5
+  },
+  {
+    "id": 3,
+    "nome": "Campeonato dos streamers",
+    "jogo": "Free Fire",
+    "valor": "R$ 242,00",
+    "participantes": 5
+  },
+  {
+    "id": 4,
+    "nome": "Capudo Cup",
+    "jogo": "Free Fire",
+    "valor": "R$ 200,00",
+    "participantes": 5
+  },
+  {
+    "id": 5,
+    "nome": "American Players",
+    "jogo": "Free Fire",
+    "valor": "R$ 310,00",
+    "participantes": 5
+  },
+  {
+    "id": 6,
+    "nome": "Campeonato Regional SP",
+    "jogo": "Free Fire",
+    "valor": "R$ 110,00",
+    "participantes": 5
+  }
+]

@@ -1,13 +1,24 @@
 import React, { useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import Dropdown from "../../../../components/Common/Input/Dropdown";
 import SetasCarrossel from "../../../../components/Common/SetasCarrossel";
 import CardCompeticao from "./CardCompeticao";
+import { obterCompeticoesInscricao } from "../../../../services/Api";
+import { CompeticaoInscricao } from "../../../../services/CommonTypes";
 
 const ListagemCompeticoes = () => {
   const listagemCompeticoesRef = useRef<HTMLDivElement | null>(null);
 
   const { control } = useForm();
+
+  const { data: competicoesInscricao } = useQuery(
+    ["competicoesInscricao"],
+    async (): Promise<CompeticaoInscricao[]> => {
+      const { data } = await obterCompeticoesInscricao();
+      return data;
+    }
+  );
 
   return (
     <>
@@ -57,15 +68,14 @@ const ListagemCompeticoes = () => {
         className="mt-4 flex gap-5 overflow-x-scroll scrollbar-none scroll-smooth"
         ref={listagemCompeticoesRef}
       >
-        {Array(9)
-          .fill(0)
-          .map(() => (
+        {competicoesInscricao?.length &&
+          competicoesInscricao.map((competicao) => (
             <CardCompeticao
-              key={Math.random()}
-              nome="Comp das lendas"
-              jogo="Free fire"
-              valor={200}
-              numParticipantes={5}
+              key={competicao.id}
+              jogo={competicao.jogo}
+              nome={competicao.nome}
+              numParticipantes={competicao.participantes}
+              valor={competicao.valor}
             />
           ))}
       </div>

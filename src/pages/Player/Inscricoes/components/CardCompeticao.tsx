@@ -8,7 +8,7 @@ import Button from "../../../../components/Common/Button";
 interface ICardCompeticaoProps {
   nome: string;
   jogo: string;
-  valor: number;
+  valor: string;
   numParticipantes: number;
   emBreve?: boolean;
 }
@@ -39,7 +39,7 @@ const CardCompeticao = ({
 
         <div className="mb-2">
           <span className="block text-light-gray">Por equipe (R$):</span>
-          <span>R$ {valor.toFixed(2)}</span>
+          <span>{valor}</span>
         </div>
 
         <div className="mb-2">

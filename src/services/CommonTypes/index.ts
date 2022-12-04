@@ -7,3 +7,11 @@ export interface File {
   type: string;
   webkitRelativePath: string;
 }
+
+export interface CompeticaoInscricao {
+  id: number;
+  nome: string;
+  jogo: string;
+  valor: string;
+  participantes: number;
+}
