@@ -21,4 +21,5 @@ export interface Campeonato {
   titulo: string;
   jogo: string;
   imagem: string;
+  ano: number;
 }

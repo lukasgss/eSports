@@ -10,8 +10,8 @@ import { obterListagemCampeonatosCadastrados } from "../../../../services/Api";
 import { Campeonato } from "../../../../services/CommonTypes";
 
 interface FormCampeonatosFields {
-  terminoCampeonato: DadosDropdown;
-  jogos: DadosDropdown;
+  terminoCampeonato: DadosDropdown | null;
+  jogos: DadosDropdown | null;
 }
 
 const ListagemCampeonatos = () => {
@@ -25,7 +25,10 @@ const ListagemCampeonatos = () => {
     }
   );
 
-  const { control } = useForm<FormCampeonatosFields>();
+  const { control, watch } = useForm<FormCampeonatosFields>();
+
+  const filtroTerminoCampeonato = watch("terminoCampeonato", null);
+  const filtroJogos = watch("jogos", null);
 
   return (
     <section

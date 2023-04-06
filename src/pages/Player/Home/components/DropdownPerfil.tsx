@@ -31,7 +31,7 @@ const DropdownPerfil = () => {
         </div>
       </Menu.Button>
       <Menu.Items
-        className="absolute bg-darker-blue right-8 top-[70px] lg:top-[60px] mt-2 w-[265px] origin-top-right
+        className="absolute bg-darker-blue right-8 top-[70px] lg:top-[60px] mt-3 lg:mt-7 w-[265px] origin-top-right
        rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-non"
       >
         <Menu.Item>

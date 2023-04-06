@@ -20,8 +20,8 @@ const NavbarPlayerNoAuth = ({
       <div className="items-center gap-5 hidden lg:flex">
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/campeonatos">Campeonatos</NavLink>
-        <NavLink to="/noticias">Notícias</NavLink>
-        <NavLink to="/players">Players</NavLink>
+        <NavLink to="/inscricoes">Inscrições</NavLink>
+        <NavLink to="/comunicados">Comunicados</NavLink>
       </div>
       <div className="items-center gap-5 hidden lg:flex">
         <NavLink to="/criar-campeonato">Criar campeonato</NavLink>

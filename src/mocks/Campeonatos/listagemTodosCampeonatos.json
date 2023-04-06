@@ -3,72 +3,84 @@
     "id": 1,
     "titulo": "Lobas game cup",
     "imagem": "/src/assets/img/cardCampeonatoLeagueOfLegends.png",
-    "jogo": "League Of Legends"
+    "jogo": "League Of Legends",
+    "ano": 2022
   },
   {
     "id": 2,
     "titulo": "Dota game cup",
     "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png",
-    "jogo": "Dota 2"
+    "jogo": "Dota 2",
+    "ano": 2021
   },
   {
     "id": 3,
     "titulo": "Lobas game cup",
     "imagem": "/src/assets/img/cardCampeonatoLeagueOfLegends.png",
-    "jogo": "League Of Legends"
+    "jogo": "League Of Legends",
+    "ano": 2022
   },
   {
     "id": 4,
     "titulo": "Dota game cup",
     "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png",
-    "jogo": "Dota 2"
+    "jogo": "Dota 2",
+    "ano": 2022
   },
   {
     "id": 5,
     "titulo": "Dota game cup",
     "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png",
-    "jogo": "Dota 2"
+    "jogo": "Dota 2",
+    "ano": 2021
   },
   {
     "id": 6,
     "titulo": "Lobas game cup",
     "imagem": "/src/assets/img/cardCampeonatoLeagueOfLegends.png",
-    "jogo": "League Of Legends"
+    "jogo": "League Of Legends",
+    "ano": 2021
   },
   {
     "id": 7,
     "titulo": "Dota game cup",
     "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png",
-    "jogo": "Dota 2"
+    "jogo": "Dota 2",
+    "ano": 2019
   },
   {
     "id": 8,
     "titulo": "Lobas game cup",
     "imagem": "/src/assets/img/cardCampeonatoLeagueOfLegends.png",
-    "jogo": "League Of Legends"
+    "jogo": "League Of Legends",
+    "ano": 2019
   },
   {
     "id": 9,
     "titulo": "Dota game cup",
     "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png",
-    "jogo": "Dota 2"
+    "jogo": "Dota 2",
+    "ano": 2020
   },
   {
     "id": 10,
     "titulo": "Lobas game cup",
     "imagem": "/src/assets/img/cardCampeonatoLeagueOfLegends.png",
-    "jogo": "League Of Legends"
+    "jogo": "League Of Legends",
+    "ano": 2021
   },
   {
     "id": 11,
     "titulo": "Dota game cup",
     "imagem": "/src/assets/img/Jogos/dota2CardCampeonato.png",
-    "jogo": "Dota 2"
+    "jogo": "Dota 2",
+    "ano": 2022
   },
   {
     "id": 12,
     "titulo": "Lobas game cup",
     "imagem": "/src/assets/img/cardCampeonatoLeagueOfLegends.png",
-    "jogo": "League Of Legends"
+    "jogo": "League Of Legends",
+    "ano": 2022
   }
 ]

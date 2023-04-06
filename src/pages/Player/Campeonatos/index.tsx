@@ -35,11 +35,14 @@ const Campeonatos = () => {
   const { register, watch, control } = useForm();
 
   const textoFiltradoCampeonato: string = watch("nomeCampeonato", "");
+  const anoFiltrado: string = watch("anoCampeonato", "").text;
 
-  const campeonatosFiltrados = campeonatos?.filter((campeonato) =>
-    campeonato.titulo
-      .toLowerCase()
-      .includes(textoFiltradoCampeonato.toLowerCase())
+  const campeonatosFiltrados = campeonatos?.filter(
+    (campeonato) =>
+      campeonato.titulo
+        .toLowerCase()
+        .includes(textoFiltradoCampeonato.toLowerCase()) &&
+      campeonato.ano === parseInt(anoFiltrado, 10)
   );
 
   const arrDados = [
@@ -47,6 +50,7 @@ const Campeonatos = () => {
     { text: "2021", value: 2 },
     { text: "2020", value: 3 },
     { text: "2019", value: 4 },
+    { text: "2018", value: 5 },
   ];
 
   return (
@@ -74,6 +78,7 @@ const Campeonatos = () => {
               control={control}
               name="anoCampeonato"
               placeholder="Ano"
+              defaultValue={arrDados[0]}
               arrDados={arrDados}
               error={undefined}
             />

@@ -13,7 +13,7 @@ interface DropdownProps {
   name: string;
   placeholder: string;
   control: Control<any>;
-  defaultValue?: number;
+  defaultValue?: DadosDropdown;
   arrDados: DadosDropdown[];
   textoLabel?: string;
   error: FieldError | undefined;
