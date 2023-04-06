@@ -33,8 +33,7 @@ const InformacoesCompeticao = () => {
           <BiDollar className="w-6 h-6" /> Valor de inscrição
         </span>
         <span className="w-full text-center text-[#bbb]">
-          <span className="text-primary-green">R$ {valor.toFixed(2)}</span> por
-          player
+          <span className="text-primary-green">{valor}</span> por player
         </span>
       </div>
     </div>
